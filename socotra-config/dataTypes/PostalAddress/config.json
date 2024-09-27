@@ -1,0 +1,24 @@
+{
+  "displayName" : "Postal Address",
+  "data" : {
+    "address" : {
+      "displayName" : "Address",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
+    },
+    "state" : {
+      "displayName" : "State",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
+    },
+    "postcode" : {
+      "displayName" : "Postcode",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

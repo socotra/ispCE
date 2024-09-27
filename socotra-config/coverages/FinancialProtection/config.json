@@ -1,0 +1,33 @@
+{
+  "displayName" : "Section 4 - Financial Protection",
+  "charges" : [ "Premium", "StampDuty", "GST" ],
+  "data" : {
+    "lossRevenue" : {
+      "displayName" : "Loss of Revenue (SUM Insured per Item)",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000,
+      "options" : [ "N/A", "$20,000", "$50,000", "$100,000" ]
+    },
+    "itemCover" : {
+      "displayName" : "Items to be Covered",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "period" : {
+      "displayName" : "period",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000,
+      "options" : [ "N/A", "3 months", "6 months", "12 months" ]
+    },
+    "totalSumInsured" : {
+      "displayName" : "Total Sum Insured for Covered Items",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

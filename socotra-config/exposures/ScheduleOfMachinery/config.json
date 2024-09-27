@@ -1,0 +1,12 @@
+{
+  "displayName" : "Schedule of Machinery",
+  "contents" : [ "Damage?", "HiredInPlant?", "FinancialProtection?", "Breakdown?", "RoadRisk?" ],
+  "data" : {
+    "machine" : {
+      "displayName" : "Machine",
+      "type" : "Machine*",
+      "scope" : "QQ,P,Q"
+    }
+  },
+  "abstract" : false
+}

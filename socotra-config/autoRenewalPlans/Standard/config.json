@@ -1,0 +1,6 @@
+{
+  "generateAutoRenewals" : true,
+  "renewalCreateLeadDays" : 45,
+  "renewalAcceptLeadDays" : 15,
+  "renewalIssueLeadDays" : 5
+}

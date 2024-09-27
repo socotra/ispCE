@@ -1,0 +1,53 @@
+{
+  "displayName" : "Machine",
+  "data" : {
+    "itemNumber" : {
+      "displayName" : "Item Number",
+      "type" : "int?",
+      "scope" : "QQ,P,Q"
+    },
+    "make" : {
+      "displayName" : "Make",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "year" : {
+      "displayName" : "Year",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "regoNumber" : {
+      "displayName" : "Registration Number",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "serialNumber" : {
+      "displayName" : "Eng/Serial Number",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "coverBasis" : {
+      "displayName" : "Cover Basis",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000,
+      "options" : [ "Market Value", "Market Value Plus" ]
+    },
+    "attachment" : {
+      "displayName" : "Attachment Details",
+      "type" : "string",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "marketValue" : {
+      "displayName" : "Market Value",
+      "type" : "int?",
+      "scope" : "QQ,P,Q"
+    }
+  },
+  "abstract" : false
+}

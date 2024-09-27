@@ -1,0 +1,14 @@
+{
+  "displayName" : "Section 6 - Road Risk Third Party",
+  "coverageTerms" : [ "RoadriskLimit?" ],
+  "charges" : [ "Premium", "StampDuty", "GST" ],
+  "data" : {
+    "itemCover" : {
+      "displayName" : "Items Covered By This Section",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

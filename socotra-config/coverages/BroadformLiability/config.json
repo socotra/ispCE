@@ -1,0 +1,21 @@
+{
+  "displayName" : "Section 7 - Broadform Liability",
+  "coverageTerms" : [ "BroadformLimit?" ],
+  "charges" : [ "Premium", "GST", "StampDuty" ],
+  "data" : {
+    "businessActivity" : {
+      "displayName" : "Please describe business activities performed as part of your business",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "contractors" : {
+      "displayName" : "Do you engage Labour Hire companies/Contractors/Sub Contractors to perform work on your behalf?",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000,
+      "options" : [ "No", "Yes" ]
+    }
+  },
+  "abstract" : false
+}

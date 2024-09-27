@@ -1,0 +1,20 @@
+{
+  "displayName" : "Business Account",
+  "data" : {
+    "insuredName" : {
+      "displayName" : "Insured Name",
+      "type" : "string",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000,
+      "tag" : [ "accountList:true", "searchAccountCard:true" ]
+    },
+    "abn" : {
+      "displayName" : "ABN",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000,
+      "tag" : [ "searchAccountCard:true" ]
+    }
+  },
+  "abstract" : false
+}

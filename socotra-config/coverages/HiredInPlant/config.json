@@ -1,0 +1,25 @@
+{
+  "displayName" : "Section 2 - Hired In Plant",
+  "charges" : [ "Premium", "StampDuty", "GST" ],
+  "data" : {
+    "itemCover" : {
+      "displayName" : "Items Covered By This Section",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "blanket" : {
+      "displayName" : "Blanket Cover",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000,
+      "options" : [ "No", "Yes" ]
+    },
+    "totalSumInsured" : {
+      "displayName" : "Total Sum Insured for Covered Items",
+      "type" : "int?",
+      "scope" : "QQ,Q,P"
+    }
+  },
+  "abstract" : false
+}

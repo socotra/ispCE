@@ -1,0 +1,18 @@
+{
+  "displayName" : "Section 5 - Breakdown",
+  "charges" : [ "Premium", "StampDuty", "GST" ],
+  "data" : {
+    "itemCover" : {
+      "displayName" : "Items Covered By This Section",
+      "type" : "string?",
+      "scope" : "Q,P,QQ",
+      "maxLength" : 20000
+    },
+    "totalSumInsured" : {
+      "displayName" : "Total Sum Insured for Covered Items",
+      "type" : "int?",
+      "scope" : "QQ,P,Q"
+    }
+  },
+  "abstract" : false
+}

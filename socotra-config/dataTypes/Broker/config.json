@@ -1,0 +1,36 @@
+{
+  "displayName" : "Broker",
+  "data" : {
+    "brokerId" : {
+      "displayName" : "Broker ID",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "brokerName" : {
+      "displayName" : "Broker Name",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "brokerAffiliation" : {
+      "displayName" : "Broker Affiliation",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "brokerEmail" : {
+      "displayName" : "Broker Email",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    },
+    "commisionRate" : {
+      "displayName" : "Commission Rate",
+      "type" : "string?",
+      "scope" : "QQ,Q,P",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}

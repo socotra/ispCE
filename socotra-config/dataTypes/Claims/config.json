@@ -1,0 +1,28 @@
+{
+  "displayName" : "Claims",
+  "data" : {
+    "date" : {
+      "displayName" : "Date",
+      "type" : "date?",
+      "scope" : "P"
+    },
+    "claimDescription" : {
+      "displayName" : "Claim Description",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
+    },
+    "amount" : {
+      "displayName" : "Amount",
+      "type" : "int?",
+      "scope" : "P"
+    },
+    "insurer" : {
+      "displayName" : "Insurer",
+      "type" : "string?",
+      "scope" : "P",
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : false
+}
