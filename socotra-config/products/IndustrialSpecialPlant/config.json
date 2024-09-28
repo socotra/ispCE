@@ -105,5 +105,6 @@
       "scope" : "QQ,Q,P"
     }
   },
-  "abstract" : false
+  "abstract" : false,
+  "charges": ["Comission", "GST", "AdministrationFee"]
 }

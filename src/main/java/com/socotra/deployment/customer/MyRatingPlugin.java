@@ -42,7 +42,11 @@ public class MyRatingPlugin implements RatePlugin {
                 ratingItems.add(rateRoadRisk(scheduleMachinery));
             }
         }
-
+        if (!ratingItems.isEmpty()) {
+            ratingItems.add(rateTax(quote.locator(), ratingItems));
+            ratingItems.add(rateFee(quote.locator(), duration));
+            ratingItems.add(rateCommission(quote.locator(), ratingItems));
+        }
         return RatingSet.builder().ok(true).ratingItems(ratingItems).build();
     }
     @Override
@@ -78,11 +82,15 @@ public class MyRatingPlugin implements RatePlugin {
                     ratingItems.add(rateRoadRisk(machinery));
                 }
             }
-            //ratingItems.add(rateFee(segment.locator(), duration));
 
             if (!ratingItems.isEmpty()) {
                 ratingItems.add(rateTax(segment.locator(), ratingItems));
+                ratingItems.add(rateFee(segment.locator(), duration));
+                ratingItems.add(rateCommission(segment.locator(), ratingItems));
+
             }
+
+
         });
 
         return RatingSet.builder().ok(true).ratingItems(ratingItems).build();
@@ -176,12 +184,20 @@ public class MyRatingPlugin implements RatePlugin {
                 .build();
     }
 
-//    private RatingItem rateFee(ULID locator, BigDecimal duration) {
-//        return RatingItem.builder()
-//                .elementLocator(locator)
-//                .chargeType(ChargeType.administrationFee)
-//                .rate(BigDecimal.valueOf(10L / duration.doubleValue()))
-//                .build();
-//    }
+    private RatingItem rateFee(ULID locator, BigDecimal duration) {
+        return RatingItem.builder()
+                .elementLocator(locator)
+                .chargeType(ChargeType.administrationFee)
+                .rate(BigDecimal.valueOf(10L / duration.doubleValue()))
+                .build();
+    }
+    private RatingItem rateCommission(ULID locator, List<RatingItem> ratingItems) {
+        BigDecimal sum = ratingItems.stream().map(RatingItem::rate).reduce(BigDecimal.ZERO, BigDecimal::add);
+        return RatingItem.builder()
+                .elementLocator(locator)
+                .chargeType(ChargeType.comission)
+                .rate(sum.multiply(BigDecimal.valueOf(0.04)))
+                .build();
+    }
 
 }
