@@ -5,49 +5,63 @@ import com.socotra.coremodel.RatingItem;
 import com.socotra.coremodel.RatingSet;
 import com.socotra.platform.tools.ULID;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class MyRatingPlugin implements RatePlugin {
 
+    public record RatingItemName(RatingItem ratingItem, String name) {
+        public RatingItemName(RatingItem ratingItem, String name){
+            this.ratingItem = ratingItem;
+            this.name = name;
+        }
+    }
 
     @Override
     public RatingSet rate(IndustrialSpecialPlantQuoteRequest request) {
         var quote = request.quote();
         var duration = request.duration();
-        List<RatingItem> ratingItems = new ArrayList<>();
+        ArrayList<RatingItemName> ratingItems = new ArrayList<RatingItemName>();
+
 
         if(quote.additionalBenefits() != null){
-            ratingItems.add(rateAdditionalBenefits(quote.additionalBenefits()));
+            ratingItems.add(new RatingItemName(rateAdditionalBenefits(quote.additionalBenefits()),"Section 3 - Additional Benefits"));
         }
 
         if(quote.broadformLiability() != null){
-            ratingItems.add(rateBroadForm(quote.broadformLiability()));
+            ratingItems.add(new RatingItemName(rateBroadForm(quote.broadformLiability()), "Section 7 - Broadform Liability"));
         }
 
         for(var scheduleMachinery : quote.scheduleOfMachinerys()){
             if(scheduleMachinery.breakdown() !=null){
-                ratingItems.add(rateBreakDown(scheduleMachinery));
+                ratingItems.add(new RatingItemName(rateBreakDown(scheduleMachinery), "Section 5 - Breakdown"));
             }
             if(scheduleMachinery.damage() !=null){
-                ratingItems.add(rateDamage(scheduleMachinery));
+                ratingItems.add(new RatingItemName(rateDamage(scheduleMachinery), "Section 1 - Damage"));
             }
             if(scheduleMachinery.financialProtection() !=null){
-                ratingItems.add(rateFinancialProtection(scheduleMachinery));
+                ratingItems.add(new RatingItemName(rateFinancialProtection(scheduleMachinery), "Section 4 - Financial Protection"));
             }
             if(scheduleMachinery.hiredInPlant() !=null){
-                ratingItems.add(rateHireInPlant(scheduleMachinery));
+                ratingItems.add(new RatingItemName(rateHireInPlant(scheduleMachinery), "Section 2 - Hired in Plant"));
             }
             if(scheduleMachinery.roadRisk() !=null){
-                ratingItems.add(rateRoadRisk(scheduleMachinery));
+                ratingItems.add(new RatingItemName(rateRoadRisk(scheduleMachinery), "Section 6 - Road Risk Third Party"));
             }
         }
+        ratingItems.sort(Comparator.comparing(RatingItemName::name));
+        var sortedItems = ratingItems.stream()
+                .map(ratingItemName -> ratingItemName.ratingItem)
+                .toList();
         if (!ratingItems.isEmpty()) {
-            ratingItems.add(rateTax(quote.locator(), ratingItems));
-            ratingItems.add(rateFee(quote.locator(), duration));
-            ratingItems.add(rateCommission(quote.locator(), ratingItems));
+            ratingItems.add(new RatingItemName(rateTax(quote.locator(), sortedItems),"Taxes"));
+            ratingItems.add(new RatingItemName(rateFee(quote.locator(), duration),"Fees"));
+            ratingItems.add(new RatingItemName(rateCommission(quote.locator(), sortedItems),"Commission"));
         }
-        return RatingSet.builder().ok(true).ratingItems(ratingItems).build();
+        sortedItems = ratingItems.stream()
+                .map(ratingItemName -> ratingItemName.ratingItem)
+                .toList();
+        return RatingSet.builder().ok(true)
+                .ratingItems(sortedItems).build();
     }
     @Override
     public RatingSet rate(IndustrialSpecialPlantRequest request) {
