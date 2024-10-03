@@ -4,13 +4,21 @@
   "eligibleAccountTypes" : [ "BusinessAccount" ],
   "contents" : [ "BroadformLiability?", "AdditionalBenefits?", "ScheduleOfMachinery+" ],
   "data" : {
-    "fraud" : {
+    "businessDescripton" : {
+      "displayName" : "Describe your business activities directly associated with plant operations to be insured.",
+      "type" : "string?",
+      "scope" : "QQ,P,Q",
+      "maxLength" : 20000
+    },
+    "fraud" :
+    {
       "displayName" : "Has the business or anyone affiliated  been charges with any offence regarding fraud or dishonesty?",
       "type" : "string?",
       "scope" : "QQ,P,Q",
       "maxLength" : 20000,
       "options" : [ "No", "Yes" ]
     },
+
     "bankruptcy" : {
       "displayName" : "Has the business or anyone affiliated been declared bankrupt or place in receivership, administration or liquidation?",
       "type" : "string?",
@@ -44,61 +52,7 @@
       "type" : "Claims*",
       "scope" : "QQ,P,Q"
     },
-    "businessDescripton" : {
-      "displayName" : "Describe your business activities directly associated with plant operations to be insured.",
-      "type" : "string?",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000
-    },
-    "damage" : {
-      "displayName" : "Do you have your own machines you wish to insure against damage?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "hiredInPlant" : {
-      "displayName" : "Do you have Hired-in machines you wish to insure against Damage?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "additionalBenefits" : {
-      "displayName" : "Do you have additional benefits that you'd like to increase?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "financialProtection" : {
-      "displayName" : "Do you wish to insure any machines for Financial Protection?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "breakdown" : {
-      "displayName" : "Do you wish to insure any machines against Breakdown Damage?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "roadRisk" : {
-      "displayName" : "Do you have machines declared as Road Registered?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
-    "legalLiability" : {
-      "displayName" : "Do you wish to insure against Legal Liability for Personal Injury, Property Damage or Advertising Injury?",
-      "type" : "string",
-      "scope" : "QQ,P,Q",
-      "maxLength" : 20000,
-      "options" : [ "No", "Yes" ]
-    },
+
     "brokerInformation" : {
       "displayName" : "Broker Information",
       "type" : "Broker?",
