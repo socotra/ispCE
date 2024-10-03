@@ -1,10 +1,9 @@
 {
-  "displayName" : "Disclosure",
-  "scope" : "policy",
-  "format" : "pdf",
-  "rendering" : "prerendered",
-  "selectionTimeBasis" : "policyStartTime",
-  "trigger" : "accepted",
-  "portrait" : true,
-  "pageSize" : "A4"
+  "format":"pdf",
+  "scope": "term",
+  "rendering": "dynamic",
+  "trigger": "priced",
+  "selectionTimeBasis": "termStartTime",
+  "pageSize": "letter",
+  "portrait" : true
 }

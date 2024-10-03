@@ -22,7 +22,8 @@ public class MyUnderwritingPlugin implements UnderwritingPlugin {
 //      - Any Sum Insured on a coverage above $1m.
         ULID elementLocator = quote.locator();
        quote.scheduleOfMachinerys().stream().findFirst().ifPresent(machinery -> {
-           if(machinery.damage().data().totalSumInsured() > 1000000){
+           if(machinery.damage()!=null &&
+                   machinery.damage().data().totalSumInsured() > 1000000){
                uwFlags.add(UnderwritingFlagCore.builder()
                        .level(UnderwritingLevel.block)
                        .note("Section 1 - Damage with Sum Insured > 1M triggers manual underwriting")

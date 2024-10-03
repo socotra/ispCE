@@ -106,5 +106,6 @@
     }
   },
   "abstract" : false,
-  "charges": ["Comission", "GST", "AdministrationFee"]
+  "charges": ["Comission", "GST", "AdministrationFee"],
+  "documents": ["Disclosure"]
 }
