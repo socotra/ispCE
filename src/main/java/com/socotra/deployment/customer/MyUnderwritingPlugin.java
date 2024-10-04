@@ -82,7 +82,7 @@ public class MyUnderwritingPlugin implements UnderwritingPlugin {
                     .elementLocator(quote.additionalBenefits().locator())
                     .build());
         }
-
+        uwFlags.forEach(flag -> log.info("flag {}, {}",flag.elementLocator(), flag.note()));
         return uwFlags.isEmpty()
                 ?UnderwritingModification.builder()
                 .flagsToCreate(List.of(UnderwritingFlagCore.builder()

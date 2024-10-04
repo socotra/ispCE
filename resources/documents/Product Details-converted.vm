@@ -37,7 +37,7 @@
             </tbody>
         </table>
 </figure>
-<p>Broker name<br/></p>
+<p>$!data.quote.data.brokerInformation.brokerName<br/></p>
 <p>Broker address</p>
 <p>August 20, 2024</p>
 <p><br/></p>
@@ -152,15 +152,15 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top;">
-                    <p>BROKER NAME<br/></p>
+                    <p>$!data.quote.data.brokerInformation.brokerName</p>
                     <p>BROKER ADDRESS</p>
                 </td>
                 <td>
                     <p><strong>Memorandum:</strong></p>
                     <p><strong>Client Ref:</strong></p>
                     <p><strong>Invoice Number:</strong></p>
-                    <p><strong>Date:</strong></p>
-                    <p><strong>Policy Number:</strong></p>
+                    <p><strong>Date: $!data.quote.startTime</strong></p>
+                    <p><strong>Policy Number: $!data.quote.locator</strong></p>
                     <p><strong>Executive:</strong></p>
                 </td>
             </tr>
@@ -177,10 +177,10 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top;">
-                    <p><strong>INSURER:</strong></p>
-                    <p><strong>INSURED:</strong></p>
-                    <p><strong>PERIOD:</strong></p>
-                    <p><strong>CLASS:</strong></p>
+                    <p><strong>INSURER:QBE INSURANCE (AUST) LTD GPO BOX 82 SYDNEY NSW 2001</strong></p>
+                    <p><strong>INSURED:$!data.account.data.insuredName</strong></p>
+                    <p><strong>PERIOD: $!data.quote.startTime to $!data.quote.endTime</strong></p>
+                    <p><strong>CLASS: Industrial Special Plant</strong></p>
                 </td>
                 <td>
                     <figure class="table" style="width:98.58%;">
@@ -273,11 +273,11 @@
         <tbody>
             <tr>
                 <td>Period of Insurance :<br/></td>
-                <td>28/08/2024 to 28/08/2025<br/></td>
+                <td>$!data.quote.startTime to $!data.quote.endTime<<br/></td>
             </tr>
             <tr>
                 <td>Insured :<br/></td>
-                <td>Insured name</td>
+                <td>$!data.account.data.insuredName</td>
             </tr>
             <tr>
                 <td>Business Description :<br/></td>
@@ -784,40 +784,43 @@
                     <p>=======================================================================</p>
                     <p>Master Schedule of Machines</p>
                     <p>=======================================================================</p>
-                    <figure class="table" style="float:left;width:96.78%;">
-                        <table class="ck-table-resized">
-                            <colgroup>
-                                <col style="width:48.56%;">
-                                <col style="width:51.44%;">
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <td>Item Number:</td>
-                                    <td><br/></td>
-                                </tr>
-                                <tr>
-                                    <td>Make:</td>
-                                    <td><br/></td>
-                                </tr>
-                                <tr>
-                                    <td>Year:</td>
-                                    <td><br/></td>
-                                </tr>
-                                <tr>
-                                    <td>Eng/Serial Number:</td>
-                                    <td><br/></td>
-                                </tr>
-                                <tr>
-                                    <td>Cover Basis</td>
-                                    <td><br/></td>
-                                </tr>
-                                <tr>
-                                    <td>Attachment Details</td>
-                                    <td><br/></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    #foreach ($!machine in $!data.quote.scheduleOfMachinerys[0].data.machine)
+                        <figure class="table" style="float:left;width:96.78%;">
+                            <table class="ck-table-resized">
+                                <colgroup>
+                                    <col style="width:48.56%;">
+                                    <col style="width:51.44%;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>Item Number:</td>
+                                        <td>$machine.itemNumber</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Make:</td>
+                                        <td>$machine.make</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year:</td>
+                                        <td>$machine.year</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Eng/Serial Number:</td>
+                                        <td>$machine.serialNumber</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cover Basis</td>
+                                        <td>$machine.coverBasis</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attachment Details</td>
+                                        <td>$machine.attachment</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                        <p>=======================================================================</p>
+                    #end
                     <p><br/></p>
                 </td>
             </tr>
