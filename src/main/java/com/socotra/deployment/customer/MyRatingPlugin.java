@@ -111,7 +111,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
 
     private RatingItem rateAdditionalBenefits(AdditionalBenefits addBenefits){
-        var rate = 0.001 * new BigDecimal(addBenefits.data().totalSumInsured()).doubleValue();
+        var rate = 0.0001 * new BigDecimal(addBenefits.data().totalSumInsured()).doubleValue();
         return RatingItem.builder()
                 .elementLocator(addBenefits.locator())
                 .chargeType(ChargeType.premium)
@@ -120,7 +120,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private RatingItem rateBroadForm(BroadformLiability broadLiability){
         //Broadform Liability = BroadformLimit Selection x Factor for each limit
-        var rate = .5 *
+        var rate = .05 *
         switch (broadLiability.broadformLimit()) {
             case BFL_5 -> 0.8;
             case BFL_10 -> 0.82;
@@ -137,7 +137,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private RatingItem rateBreakDown(ScheduleOfMachinery machinery){
         var cover = machinery.breakdown();
-        var rate = .002 * cover.data().totalSumInsured();
+        var rate = .0002 * cover.data().totalSumInsured();
         return RatingItem.builder()
                 .elementLocator(cover.locator())
                 .chargeType(ChargeType.premium)
@@ -146,7 +146,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private  RatingItem rateDamage(ScheduleOfMachinery machinery){
         var cover = machinery.damage();
-        var rate = .004 * cover.data().totalSumInsured();
+        var rate = .0004 * cover.data().totalSumInsured();
         return RatingItem.builder()
                 .elementLocator(cover.locator())
                 .chargeType(ChargeType.premium)
@@ -155,7 +155,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private  RatingItem rateFinancialProtection(ScheduleOfMachinery machinery){
         var cover = machinery.financialProtection();
-        var rate = .001 * new BigDecimal(cover.data().totalSumInsured()).doubleValue();
+        var rate = .0001 * new BigDecimal(cover.data().totalSumInsured()).doubleValue();
         return RatingItem.builder()
                 .elementLocator(cover.locator())
                 .chargeType(ChargeType.premium)
@@ -164,7 +164,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private  RatingItem rateHireInPlant(ScheduleOfMachinery machinery){
         var cover = machinery.hiredInPlant();
-        var rate = .001 * cover.data().totalSumInsured();
+        var rate = .0001 * cover.data().totalSumInsured();
         return RatingItem.builder()
                 .elementLocator(cover.locator())
                 .chargeType(ChargeType.premium)
@@ -173,7 +173,7 @@ public class MyRatingPlugin implements RatePlugin {
     }
     private  RatingItem rateRoadRisk(ScheduleOfMachinery machinery){
         var cover = machinery.roadRisk();
-        var rate = .2 *
+        var rate = .02 *
                 switch (cover.roadriskLimit()) {
                     case RRL_20 -> 0.8;
                     case RRL_30 -> 0.82;
