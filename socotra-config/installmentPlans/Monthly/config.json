@@ -1,6 +1,11 @@
 {
-  "displayName" : "Monthly",
-  "cadence" : "monthly",
-  "installmentWeights" : [ 2 ],
-  "maxInstallmentsPerTerm" : 10
+  "displayName": "Monthly",
+  "cadence": "monthly",
+  "maxInstallmentsPerTerm": 10,
+  "installmentWeights": [
+    2
+  ],
+  "anchorMode": "termStartDay",
+  "generateLeadDays": 15,
+  "dueLeadDays": 0
 }

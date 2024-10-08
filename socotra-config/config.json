@@ -1,11 +1,11 @@
 {
-  "defaultTimeZone" : "US/Central",
+  "defaultTimeZone" : "Australia/Sydney",
   "defaultCurrency" : "AUD",
   "defaultTermDuration" : 12,
   "defaultInstallmentPlan" : "FullPay",
   "defaultDurationBasis" : "months",
   "defaultBillingTrigger" : "issue",
-  "defaultBackdatedInstallmentsBilling" : "deferDueDate",
+  "defaultBackdatedInstallmentsBilling" : "immediate",
   "defaultDelinquencyPlan" : "Standard",
   "defaultAutoRenewalPlan" : "Standard",
   "defaultExcessCreditPlan" : "Standard",

@@ -1,7 +1,7 @@
 {
-  "displayName" : "Standard Delinquency Plan",
-  "gracePeriodDays" : 7,
-  "delinquencyLevel" : "policy",
-  "lapseTransactionType" : "cancellation",
-  "advanceLapseTo" : "issued"
+  "displayName": "Standard Delinquency Plan",
+  "advanceLapseTo": "issued",
+  "gracePeriodDays": 15,
+  "lapseTransactionType": "NonPay",
+  "delinquencyLevel": "policy"
 }

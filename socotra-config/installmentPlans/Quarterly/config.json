@@ -1,6 +1,9 @@
 {
-  "displayName" : "Quarterly",
-  "cadence" : "quarterly",
-  "installmentWeights" : [ 2 ],
-  "maxInstallmentsPerTerm" : 10
+  "displayName": "Quarterly",
+  "cadence": "quarterly",
+  "maxInstallmentsPerTerm": 4,
+  "installmentWeights": [],
+  "anchorMode": "termStartDay",
+  "generateLeadDays": 30,
+  "dueLeadDays": 0
 }

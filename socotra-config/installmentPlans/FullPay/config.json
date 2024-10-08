@@ -1,6 +1,9 @@
 {
-  "displayName" : "FullPay",
-  "cadence" : "fullPay",
-  "installmentWeights" : [ 2 ],
-  "maxInstallmentsPerTerm" : 10
+  "displayName": "FullPay",
+  "cadence": "fullPay",
+  "maxInstallmentsPerTerm": 1,
+  "installmentWeights": [],
+  "anchorMode": "termStartDay",
+  "generateLeadDays": 30,
+  "dueLeadDays": 0
 }

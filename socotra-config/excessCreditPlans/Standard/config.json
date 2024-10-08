@@ -1,3 +1,5 @@
 {
-  "disburseExcess" : false
+  "disburseExcess" : true,
+  "disbursementType": "StandardDisbursement",
+  "excludeDebits": "allInvoices"
 }

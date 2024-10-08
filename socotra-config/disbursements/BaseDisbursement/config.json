@@ -1,0 +1,16 @@
+{
+  "data" : {
+    "payeeFirstName" : {
+      "displayName" : "Payee First Name",
+      "type" : "string",
+      "maxLength" : 20000
+    },
+    "payeeLastName" : {
+      "displayName" : "Payee Last Name",
+      "type" : "string",
+      "minLength" : 2,
+      "maxLength" : 20000
+    }
+  },
+  "abstract" : true
+}
